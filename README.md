@@ -94,7 +94,7 @@ We'll use `ModelCheckpoint` to <b>save</b> our model after each epoch. We're <b>
 - It also significantly lowers the number of weight parameters in the model. For example, the input and output of a three-layer 3 x 3 convolutional stack have C channels, the number of weight parameters are 3 * 32 C2 = 27 C2. Compared to a 7 x 7 convolutional layer, it requires 72 C2 = 49 C2, which is nearly twice the 3 x 3 layers. Furthermore, this can be seen as a regularization on the 7 x 7 convolutional filters forcing them to have a decomposition through the 3 x 3 filters, with non-linearity added in-between via ReLU activations. This lowers the likihood that the model will over-fit while it's training.<br>
 <br>
 
-<img src="images/notebook/vgg-16_input_output.png" width="1000" height="1000"><br>
+<img src="images/notebook/vgg-16_input_output.png" width="400" height="400"><br>
 
 - Additionaly, Conv-1 Layer has 64 number of filters, Conv-2 has 128 filters, Conv-3 has 256 filters, Conv 4 and Conv 5 has 512 filters.<br>
 <br>

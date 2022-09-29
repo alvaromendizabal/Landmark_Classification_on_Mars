@@ -102,13 +102,13 @@ We'll use `ModelCheckpoint` to <b>save</b> our model after each epoch. We're <b>
 
 # Results
 Best performing VGG16 model achieved a <b>validation accuracy</b> score of <b>90.5%</b> and a <b>validation loss</b> score of  <b>0.3622</b>.
-![img](./images/notebook/confusion_matrix_classification_report_test.jpg)
+![img](./images/notebook/confusion_matrix_classification_report_val.jpg)
 
 Here, we line plot the loss and for the validation and train sets. Our best validaiton accuracy was <b>90.5%</b>, an  <b>11.5%</b> improvement over the dummy model, but we <b>don't see</b> the loss or accuracy reach a <b>good fit</b> point.
 ![img](./figures/loss_acc_vgg16.jpg)
 
 Best performing VGG16 model achieved a <b>test accuracy</b> score of <b>91.4%</b> and a <b>test loss</b> score of  <b>0.3928</b>. It has performed very well on unseen data.
-![img](./images/notebook/confusion_matrix_classification_report_val.jpg)
+![img](./images/notebook/confusion_matrix_classification_report_test.jpg)
 
 
 # Conclusion

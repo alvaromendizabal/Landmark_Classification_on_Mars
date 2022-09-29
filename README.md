@@ -108,7 +108,7 @@ Here, we line plot the loss and for the validation and train sets. Our best vali
 ![img](./figures/loss_acc_vgg16.jpg)
 
 Best performing VGG16 model achieved a <b>test accuracy</b> score of <b>91.4%</b> and a <b>test loss</b> score of  <b>0.3928</b>. It has performed very well on unseen data.
-![img](./images/confusion_matrix_classification_report_test.png)
+![img](./images/confusion_matrix_classification_report_test.jpg)
 
 
 # Conclusion

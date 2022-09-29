@@ -87,7 +87,7 @@ We'll use `ModelCheckpoint` to <b>save</b> our model after each epoch. We're <b>
 <br>
 - VGG16 input is an image of dimensions (224, 224, 3).<br>
 <br>
-<img src="images/notebook/vgg-16_architecture.jpg" width="500" height="500">
+<img src="images/notebook/vgg-16_architecture.jpg" width="600" height="400">
 <br>
 - What's unique about VGG16 is that it uses of a very small 3 x 3 receptive field (filters) throughout the network with the stride of 1 pixel. 2 consecutive 3 x 3 filters provide an effective receptive field of 5 x 5. Likewise, three 3 x 3 filters compensate for a receptive field of 7 x 7. This way, a combination of many 3 x 3 filters can compensate for a receptive area of a larger size.<br>
 <br>

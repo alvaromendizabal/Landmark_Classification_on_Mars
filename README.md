@@ -9,7 +9,7 @@ Alvaro Mendizabal | [LinkedIn](https://www.linkedin.com/in/alvaro-mendizabal/) |
 
 # Business Understanding
 
-The aerospace and defense industry reported $\$$712 billion of revenue in 2021 (up 4\% over 2020), and $62 billion of operating profit (up 136%), according to PwC analysis. Recently, NASA smashed it's Dart probe into an asteroid, destoyring itself in the process. The collision was intentional and designed to test whether space rocks that might threaten Earth could be pushed safely out of the way. Reports indicate that the Dart probe was a mere 17 meters off the exact centre of the asteroid. NASA and the aerospace industry are capable of traveling further than they ever have, navigating to specific locations, and capturing photos, recording video and taking samples.
+The aerospace and defense industry reported $712 billion of revenue in 2021 (up 4% over 2020), and $62 billion of operating profit (up 136%), according to PwC analysis. Recently, NASA smashed it's Dart probe into an asteroid, destoyring itself in the process. The collision was intentional and designed to test whether space rocks that might threaten Earth could be pushed safely out of the way. Reports indicate that the Dart probe was a mere 17 meters off the exact centre of the asteroid. NASA and the aerospace industry are capable of traveling further than they ever have, navigating to specific locations, and capturing photos, recording video and taking samples.
 
 But, <b>"Houston, we have a problem."</b> And it's that there aren't enough scientists to review all the collected images and classify them. We at <b>Image Science and Analysis Group (ISAG)</b> have built a model that <b>"takes one giant leap"</b> over this problem. <b>First</b>, our model can identify landmarks types and contribute to mapping out the terain on Mars. <b>Second</b>, we can also identify other unclassifiable landmarks or features. The images classified as other may foster efforts to select sites of interest to explore during manned or unnmanned missions. At it's core, our model let's us know what we're looking at and if doesn't then it lures to a new place we could go. In this way, image science is part and parcel of <b>space exploration</b> and discovery and our group can help <b>NASA</b> further this mission.
 
@@ -107,7 +107,7 @@ Best performing VGG16 model achieved a <b>validation accuracy</b> score of <b>90
 Here, we line plot the loss and for the validation and train sets. Our best validaiton accuracy was <b>90.5%</b>, an  <b>11.5%</b> improvement over the dummy model, but we <b>don't see</b> the loss or accuracy reach a <b>good fit</b> point.
 ![img](./figures/loss_acc_vgg16.jpg)
 
-Best performing VGG16 model achieved a <b>test accuracy</b> score of <b>91.4%</b> and a <b>test loss</b> score of  <b>0.3928</b>. It has performed very well on unseen data.
+Best performing VGG16 model achieved a <b>test accuracy</b> score of <b>91.4%</b> and a <b>test loss</b> score of  <b>0.3928</b>.
 ![img](./images/notebook/confusion_matrix_classification_report_test.jpg)
 
 
@@ -147,25 +147,18 @@ Our VGG16 model has performed very well on unseen data. We can predict landmark 
 │           ├── spider *
 │           └── swiss cheese *
 ├── logs *
-├── mass_maps * 
-├── figures  
+├── map * 
 ├── src  *
 │     ├── imageHandler.py
 │     └── helperFunctions.py
 |
 ├── Exploratory Data Analysis.ipynb  
 ├── Notebook.ipynb  
-├── 02_TensorflowModeling_FinalModels.ipynb  
-├── 03_TensorflowModeling_AlexNet.ipynb  
-├── 04_TensorflowModeling_LeNet.ipynb  
-├── 05_TensorflowModeling_VGG16_TransferLearning.ipynb
-├── 06_AnomalyDetection.ipynb
-|
 ├── README.md
 ├── presentation.pdf
-├── mars_anomaly_detection_app.py
-├── environment.yml
-└── TweetSentimentAnalysis_nb.ipynb
+├── app.py
+├── README.md
+└── environment.yml
 
-* = notebooks will be created as part of running the notebooks.
+* = files and folders will be created after running the .ipynb files.
 ```

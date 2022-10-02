@@ -2,7 +2,7 @@ import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def createDir(path):
+def create_directory(path):
     '''
     Tries to create a directory (relative to root)    
     '''
@@ -12,7 +12,7 @@ def createDir(path):
         print(path, 'directory already exists')
         
         
-def display_model_trainTestGraphs(results):
+def display_model_train_test_graphs(results):
     '''
     Displays train vs validation graphs for accuracy and loss
     '''

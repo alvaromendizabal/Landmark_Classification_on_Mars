@@ -83,10 +83,10 @@ def new_bbox(img_object, create_new=False):
         df_bbox = new_bboxes(img_object)
     else:
         try:
-            print('reading current')
+            print('reading')
             df_bbox = pd.read_csv(f'./map/bbox_{img_width}_{img_height}.csv')
         except FileNotFoundError:
-            print('no existing doc. creating')
+            print('no document - creating')
             df_bbox = new_bboxes(img_object)
             
     return df_bbox

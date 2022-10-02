@@ -1,7 +1,6 @@
 <img src="images/notebook/mars_cartoon_jason_adam_katzenstein.jpg" width="1000" height="1000">
-![img](./images/notebook/mars_cartoon_jason_adam_katzenstein.jpg)
 
-# Anomaly Detection on Mars
+# Landmark Classification on Mars
 #### VGG16 neural network trained on images collected by the Mars Reconnaissance Orbiter identifies landmark types on the Red Planet with 91.4% accuracy. 
 
 Alvaro Mendizabal | [LinkedIn](https://www.linkedin.com/in/alvaro-mendizabal/) | [GitHub](https://github.com/alvaromendizabal) | [Email](mailto:alv.mendizabal@gmail.com)
@@ -11,7 +10,7 @@ Alvaro Mendizabal | [LinkedIn](https://www.linkedin.com/in/alvaro-mendizabal/) |
 
 The aerospace and defense industry reported $712 billion of revenue in 2021 (up 4% over 2020), and $62 billion of operating profit (up 136%), according to PwC analysis. Recently, NASA smashed it's Dart probe into an asteroid, destoyring itself in the process. The collision was intentional and designed to test whether space rocks that might threaten Earth could be pushed safely out of the way. Reports indicate that the Dart probe was a mere 17 meters off the exact centre of the asteroid. NASA and the aerospace industry are capable of traveling further than they ever have, navigating to specific locations, and capturing photos, recording video and taking samples.
 
-But, <b>"Houston, we have a problem."</b> And it's that there aren't enough scientists to review all the collected images and classify them. We at <b>Image Science and Analysis Group (ISAG)</b> have built a model that <b>"takes one giant leap"</b> over this problem. <b>First</b>, our model can identify landmarks types and contribute to mapping out the terain on Mars. <b>Second</b>, we can also identify other unclassifiable landmarks or features. The images classified as other may foster efforts to select sites of interest to explore during manned or unnmanned missions. At it's core, our model let's us know what we're looking at and if doesn't then it lures to a new place we could go. In this way, image science is part and parcel of <b>space exploration</b> and discovery and our group can help <b>NASA</b> further this mission.
+But, <b>"Houston, we have a problem."</b> And it's that there aren't enough scientists to review all the collected images and classify them. We at <b>Image Science and Analysis Group (ISAG)</b> have built a model that <b>"takes one giant leap"</b> over this problem. <b>First</b>, our model can identify 8 landmarks types and contribute to mapping out the terain on Mars. <b>Second</b>, we can also identify other unclassifiable landmarks or features. The images classified as other may foster efforts to select sites of interest to explore during manned or unnmanned missions. At it's core, our model let's us know what we're looking at and if doesn't then it lures to a new place we could go. In this way, image science is part and parcel of <b>space exploration</b> and discovery and our group can help <b>NASA</b> further this mission.
 
 # Data
 
@@ -110,9 +109,12 @@ Here, we line plot the loss and for the validation and train sets. Our best vali
 Best performing VGG16 model achieved a <b>test accuracy</b> score of <b>91.4%</b> and a <b>test loss</b> score of  <b>0.3928</b>.
 ![img](./images/notebook/confusion_matrix_classification_report_test.jpg)
 
+# App
+We deployed our model in a app hosted by streamlit. You can drop in a image and the app will identify the different landmarks in the image. We can use the app to map the landmarks on new images. When the app identifies a landmark it <b>draws</b> a <b>colored box around</b> the <b>landmark</b>. We can tell which landmark it is because each landmark has been <b>assigned</b> a <b>unique color</b>. This promises to be an efficient and effective classifying technique.
+<img src="images/notebook/app_crater_impact_ejecta" width="800" height="800"><br>
 
 # Conclusion
-Our VGG16 model has performed very well on unseen data. We can predict landmark type on Mars with <b>91.4% accuracy</b>. It's best at predicting the <b>other</b> class. In the future, we could collect more images for the different classes to address the strong imbalance in the data and improve our model's performace. Image Science and Analysis Group is prepared to embark on this venture with NASA. 
+Our VGG16 model has performed very well on unseen data. It achieved a <b>loss</b> score of  <b>0.3928</b>. We can predict landmark type on Mars with <b>91.4% accuracy</b>. It's best at predicting the other class. In the future, we could collect more images for the different classes to address the strong imbalance in the data and improve our model's performace. Our <b>model identifies 8 landmarks types</b> and can contribute to mapping out the terain on Mars. We can also identify <b>other unclassifiable landmarks</b> or features. The images classified as other may foster efforts to select sites of interest to explore during manned or unnmanned missions. At it's core, our model let's us know what we're looking at and if doesn't then it lures to a new place we could go. In this way, image science is part and parcel of <b>space exploration</b> and discovery and our group can help <b>NASA</b> further this mission.
 
 # Repository Structure
 ```
@@ -149,10 +151,10 @@ Our VGG16 model has performed very well on unseen data. We can predict landmark 
 ├── logs *
 ├── map * 
 ├── src  *
-│     ├── imageHandler.py
-│     └── helperFunctions.py
+│     ├── image_functions.py
+│     └── helper_functions.py
 |
-├── Exploratory Data Analysis.ipynb  
+├── Exploratory_Data_Analysis.ipynb  
 ├── Notebook.ipynb  
 ├── README.md
 ├── presentation.pdf

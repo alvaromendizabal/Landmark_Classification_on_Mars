@@ -133,12 +133,11 @@ dmypy.json
 
 
 # ignores subfolders
-data/
+data/*
 *.zip
 
 # ignore extracted and compressed data
 *.zip
-extractedData/
 
 # ignore tensorflow model checkpoint folder
 tf_TransferLearning_8class_VGG16.hfpy/*
@@ -147,5 +146,5 @@ tf_TransferLearning_8class_VGG16.hfpy/*
 tf_TransferLearning_8Classes_best_model.hdf5
 
 # ignore images of our slices
-mass_maps/_slices*
-mass_maps/bbox*
+map/_slices_img
+map/bbox*

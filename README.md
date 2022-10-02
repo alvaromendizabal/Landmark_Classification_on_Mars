@@ -31,28 +31,28 @@ The remaining 1,793 images weren't augmented. Combining these with the (7 * 9,02
 The various landmarks that make up our 8 classes: 
 
 1.  <b>Dark dune</b> and bright dune are 2 sand dune classes on Mars. Dark dunes are completely defrosted, and bright dunes are not.
-<img src="images/notebook/dark_dune.jpg" width="500" height="500">
+<img src="images/notebook/dark_dune.jpg" width="600" height="400">
 
 2. <b>Bright dunes</b> are typically bright due to overlying frost. Black spots can be seen where parts of the dune are defrosting.
-<img src="images/notebook/bright_dune.jpg" width="500" height="500">
+<img src="images/notebook/bright_dune.jpg" width="600" height="400">
 
 3. <b>Crater</b> class consists of images in which the diameter of the crater is equal to or greater than 1/5 the width of the image plus the circular rim is visible for at least half of the crater's circumference.
-<img src="images/notebook/craters.jpg" width="500" height="500">
+<img src="images/notebook/craters.jpg" width="600" height="400">
 
 4. <b>Slope streak</b> class consists of images of dark flow-like features on slopes. Scientists believe these features were formed by a dry process in which overlying (bright) dust tumbles down a slope and expose a darker sub-surface.
-<img src="images/notebook/slope_streak.jpg" width="500" height="500">
+<img src="images/notebook/slope_streak.jpg" width="600" height="400">
 
 5. <b>Impact ejecta</b> is material that's blasted out from a volcano eruption or meteorite impact. They also include cases in which the impact cleared away overlying dust, revealing the underlying surface. In some cases, the crater isn't be visible because it's too small to see. Impact ejecta may also include lava that poured out from the impact (blobby ("lobate") rather than blast-like), more like an eruption (triggered by the impact). Impact ejecta can be isolated, or they can form in batches when the impactor breaks up into numerous pieces.
-<img src="images/notebook/impact_ejecta.jpg" width="500" height="500">
+<img src="images/notebook/impact_ejecta.jpg" width="600" height="400">
 
 6. <b>Spiders</b> and Swiss cheese are phenomena that occur in the south polar region of Mars. Spiders have a central pit with radial troughs, and could be formed due to sublimation of carbon dioxide ice. This process can create mineral deposits on top, which resemble light or dark dust that highlights cracks in the CO2 ice. Spiders can resemble impact ejecta due to their radial troughs, but impact ejecta typically have straight radial jets that get dimmer as they get farther from the center. The spider class also includes fan-like features that form when a geyser erupts through the CO2 layer and the material is blown away from the cracks by the wind. Fans are generally unidirectional (following the wind direction), whereas impact ejecta can fanout in multiple directions.
-<img src="images/notebook/spider.jpg" width="500" height="500">
+<img src="images/notebook/spider.jpg" width="600" height="400">
 
 7. <b>Swiss cheese</b> is a landmark type that includes pits that are formed when the sun heats the ice causing sublimation (change from solid to gas).
-<img src="images/notebook/swiss_cheese.jpg" width="500" height="500">
+<img src="images/notebook/swiss_cheese.jpg" width="600" height="400">
 
 8. <b>Other</b> is a catch-all class that contains images that don't fit into any of the classes above. This class comprises the majority of this data.
-<img src="images/notebook/other.jpg" width="500" height="500">
+<img src="images/notebook/other.jpg" width="600" height="400">
 
 Our <b>train</b>, <b>test</b>, and <b>validation</b> splits are very <b>imbalanced</b>. Over <b>81%</b>, <b>82%</b>, and <b>79%</b> belong to *'class_type'*  <b>other</b>. A dummy model would perform just as well. Our model must perform better than this.
 
@@ -93,7 +93,7 @@ We'll use `ModelCheckpoint` to <b>save</b> our model after each epoch. We're <b>
 - It also significantly lowers the number of weight parameters in the model. For example, the input and output of a three-layer 3 x 3 convolutional stack have C channels, the number of weight parameters are 3 * 32 C2 = 27 C2. Compared to a 7 x 7 convolutional layer, it requires 72 C2 = 49 C2, which is nearly twice the 3 x 3 layers. Furthermore, this can be seen as a regularization on the 7 x 7 convolutional filters forcing them to have a decomposition through the 3 x 3 filters, with non-linearity added in-between via ReLU activations. This lowers the likihood that the model will over-fit while it's training.<br>
 <br>
 
-<img src="images/notebook/vgg-16_input_output.png" width="500" height="200"><br>
+<img src="images/notebook/vgg-16_input_output.png" width="600" height="200"><br>
 
 - Additionaly, Conv-1 Layer has 64 number of filters, Conv-2 has 128 filters, Conv-3 has 256 filters, Conv 4 and Conv 5 has 512 filters.<br>
 <br>

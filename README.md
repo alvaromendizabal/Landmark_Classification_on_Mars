@@ -111,6 +111,7 @@ Best performing VGG16 model achieved a <b>test accuracy</b> score of <b>91.4%</b
 
 # App
 We deployed our model in a app hosted by streamlit. You can drop in a image and the app will identify the different landmarks in the image. We can use the app to map the landmarks on new images. When the app identifies a landmark it <b>draws</b> a <b>colored box around</b> the <b>landmark</b>. We can tell which landmark it is because each landmark has been <b>assigned</b> a <b>unique color</b>. This promises to be an efficient and effective classifying technique.
+
 <img src="images/notebook/app_crater_impact_ejecta.jpg" width="800" height="600"><br>
 
 # Conclusion

@@ -37,7 +37,7 @@ The various landmarks that make up our 8 classes:
 <img src="images/notebook/bright_dune.jpg" width="500" height="500">
 
 3. <b>Crater</b> class consists of images in which the diameter of the crater is equal to or greater than 1/5 the width of the image plus the circular rim is visible for at least half of the crater's circumference.
-<img src="images/notebook/crater.jpg" width="500" height="500">
+<img src="images/notebook/craters.jpg" width="500" height="500">
 
 4. <b>Slope streak</b> class consists of images of dark flow-like features on slopes. Scientists believe these features were formed by a dry process in which overlying (bright) dust tumbles down a slope and expose a darker sub-surface.
 <img src="images/notebook/slope_streak.jpg" width="500" height="500">

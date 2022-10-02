@@ -111,7 +111,7 @@ Best performing VGG16 model achieved a <b>test accuracy</b> score of <b>91.4%</b
 
 # App
 We deployed our model in a app hosted by streamlit. You can drop in a image and the app will identify the different landmarks in the image. We can use the app to map the landmarks on new images. When the app identifies a landmark it <b>draws</b> a <b>colored box around</b> the <b>landmark</b>. We can tell which landmark it is because each landmark has been <b>assigned</b> a <b>unique color</b>. This promises to be an efficient and effective classifying technique.
-<img src="images/notebook/app_crater_impact_ejecta.jpg" width="800" height="800"><br>
+<img src="images/notebook/app_crater_impact_ejecta.jpg" width="800" height="600"><br>
 
 # Conclusion
 Our VGG16 model has performed very well on unseen data. It achieved a <b>loss</b> score of  <b>0.3928</b>. We can predict landmark type on Mars with <b>91.4% accuracy</b>. It's best at predicting the other class. In the future, we could collect more images for the different classes to address the strong imbalance in the data and improve our model's performace. Our <b>model identifies 8 landmarks types</b> and can contribute to mapping out the terain on Mars. We can also identify <b>other unclassifiable landmarks</b> or features. The images classified as other may foster efforts to select sites of interest to explore during manned or unnmanned missions. At it's core, our model let's us know what we're looking at and if doesn't then it lures to a new place we could go. In this way, image science is part and parcel of <b>space exploration</b> and discovery and our group can help <b>NASA</b> further this mission.

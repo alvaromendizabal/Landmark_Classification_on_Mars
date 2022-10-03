@@ -11,6 +11,6 @@ scipy==1.9.1
 streamlit==1.13.0
 
 
-tensorflow==2.7.0
+tensorflow==2.8.0
 
 torch==1.12.1

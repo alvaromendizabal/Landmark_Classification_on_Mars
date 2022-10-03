@@ -1,4 +1,4 @@
-<img src="images/notebook/presentation_mars_.jpg" width="1300" height="600">
+<img src="images/notebook/presentation_mars_.jpg" width="1600" height="600">
 
 # Landmark Classification on Mars
 #### VGG16 neural network trained on images collected by the Mars Reconnaissance Orbiter identifies landmark types on the Red Planet with 91.4% accuracy. 

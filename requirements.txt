@@ -1,5 +1,5 @@
 GitPython==3.1.27
-keras==2.10.0
+keras==2.9.0
 Keras-Applications==1.0.8
 keras-nightly==2.11.0.dev2022090107
 Keras-Preprocessing==1.1.2

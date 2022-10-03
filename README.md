@@ -1,4 +1,4 @@
-<img src="images/notebook/mars_cartoon_jason_adam_katzenstein.jpg" width="600" height="600">
+<img src="images/notebook/presentation_mars_.jpg" width="600" height="600">
 
 # Landmark Classification on Mars
 #### VGG16 neural network trained on images collected by the Mars Reconnaissance Orbiter identifies landmark types on the Red Planet with 91.4% accuracy. 
@@ -117,41 +117,43 @@ We deployed our model in a app hosted by streamlit. You can drop in a image and 
 # Conclusion
 Our VGG16 model has performed very well on unseen data. It achieved a <b>loss</b> score of  <b>0.3928</b>. We can predict landmark type on Mars with <b>91.4% accuracy</b>. It's best at predicting the other class. In the future, we could collect more images for the different classes to address the strong imbalance in the data and improve our model's performace. Our <b>model identifies 8 landmarks types</b> and can contribute to mapping out the terain on Mars. We can also identify <b>other unclassifiable landmarks</b> or features. The images classified as other may foster efforts to select sites of interest to explore during manned or unnmanned missions. At it's core, our model let's us know what we're looking at and if doesn't then it lures to a new place we could go. In this way, image science is part and parcel of <b>space exploration</b> and discovery and our group can help <b>NASA</b> further this mission.
 
+<img src="images/notebook/mars_cartoon_jason_adam_katzenstein.jpg" width="600" height="600">
+
 # Repository Structure
 ```
-├── data *
-├── figures *
-├── images *
-│     ├── train *
-│     |     ├── bright dune *
-│     |     ├── crater *
-│     |     ├── dark dune *
-│     |     ├── impact ejecta *
-│     |     ├── other *
-│     |     ├── slope streak *
-│     |     ├── spider *
-│     |     └── swiss cheese *
-│     ├── val *
-│     |     ├── bright dune *
-│     |     ├── crater *
-│     |     ├── dark dune *
-│     |     ├── impact ejecta *
-│     |     ├── other *
-│     |     ├── slope streak *
-│     |     ├── spider *
-│     |     └── swiss cheese *
-│     └── test *
-│           ├── bright dune *
-│           ├── crater *
-│           ├── dark dune *
-│           ├── impact ejecta *
-│           ├── other *
-│           ├── slope streak *
-│           ├── spider *
-│           └── swiss cheese *
-├── logs *
-├── map * 
-├── src  *
+├── data 
+├── figures 
+├── images 
+│     ├── train 
+│     |     ├── bright dune 
+│     |     ├── crater 
+│     |     ├── dark dune 
+│     |     ├── impact ejecta 
+│     |     ├── other 
+│     |     ├── slope streak 
+│     |     ├── spider 
+│     |     └── swiss cheese 
+│     ├── val 
+│     |     ├── bright dune 
+│     |     ├── crater 
+│     |     ├── dark dune 
+│     |     ├── impact ejecta 
+│     |     ├── other 
+│     |     ├── slope streak 
+│     |     ├── spider 
+│     |     └── swiss cheese 
+│     └── test 
+│           ├── bright dune
+│           ├── crater
+│           ├── dark dune
+│           ├── impact ejecta
+│           ├── other
+│           ├── slope streak
+│           ├── spider
+│           └── swiss cheese
+├── logs
+├── map 
+├── src 
 │     ├── image_functions.py
 │     └── helper_functions.py
 |
@@ -162,6 +164,4 @@ Our VGG16 model has performed very well on unseen data. It achieved a <b>loss</b
 ├── app.py
 ├── README.md
 └── environment.yml
-
-* = files and folders will be created after running the .ipynb files.
 ```

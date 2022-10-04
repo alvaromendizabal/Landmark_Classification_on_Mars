@@ -24,7 +24,7 @@ def draw_bounding_rectangle(coords, img_object, color='#ff0000', width=5, alpha=
     
     alpha is the opacity - range is 0 to 1."""
 
-    #Checking for transparency
+    # Check if transparent
     if alpha > 1 or alpha < 0: 
         alpha = 1
     
@@ -37,7 +37,9 @@ def draw_bounding_rectangle(coords, img_object, color='#ff0000', width=5, alpha=
     p2 = coords[2:4]
 
     draw.rectangle([p1, p2], outline=color_opaque, width=width)
-    
+
+
+
     
 def new_bboxes(img_object):
     img_width,  img_height = img_object.size
@@ -45,7 +47,6 @@ def new_bboxes(img_object):
 
     df_list = []
     
-
     for winsize in [(277 * 0.75), (277), (277 * 1.5)]:
         winsize = round(winsize)        
         
@@ -54,25 +55,37 @@ def new_bboxes(img_object):
         
         stride = round(winsize * (1 - overlap))
 
-        # If winsize odd, increase by 1 pixel. Just easier
+        # When window size is odd, we increase by 1 pixel
         if (winsize % 2) != 0:
-            winsize+=1
-        x_values = np.arange((winsize/2), (img_width-winsize/2),stride)
-        y_values = np.arange((winsize/2), (img_height-winsize/2),stride)
+            winsize += 1
+        x_values = np.arange((winsize / 2), (img_width - winsize / 2), stride)
+        y_values = np.arange((winsize / 2), (img_height - winsize / 2), stride)
         centroids = [(x, y) for x in x_values for y in y_values]
 
         coords_list = [coords_bbox(x_cnt, y_cnt, winsize) for x_cnt, y_cnt in centroids]
 
-        #Appends new records for current winsize and bbox
-        df_list.append(pd.DataFrame([coords_list, [winsize] * len(coords_list)]).T)
+        # Append winsize and bbox records
+        df_list.append(pd.DataFrame([coords_list, 
+                                    [winsize] * len(coords_list)]).T)
 
-    df_bbox = pd.concat(df_list,ignore_index=True,axis=0)
-    df_bbox.columns = ['bbox_bounds','winsize']
-    df_bbox.to_csv(f'./map/bbox_{img_width}_{img_height}.csv', index=False)
+    df_bbox = pd.concat(df_list, 
+                        ignore_index=True, 
+                        axis=0)
+    df_bbox.columns = ['bbox_bounds', 
+                       'winsize']
+    df_bbox.to_csv(f'./map/bbox_{img_width}_{img_height}.csv', 
+                   index=False)
+    
     return df_bbox
+
+
+
 
 def coords_bbox(x_cnt, y_cnt, winsize):
     return int(x_cnt - winsize / 2), int(y_cnt - winsize / 2), int(x_cnt + winsize / 2), int(y_cnt + winsize / 2)
+
+
+
 
 def new_bbox(img_object, create_new=False):
     
@@ -91,6 +104,9 @@ def new_bbox(img_object, create_new=False):
             
     return df_bbox
 
+
+
+
 def img_slice(img_list):
 
     file_name = img_file.name
@@ -104,18 +120,17 @@ def img_slice(img_list):
     for count, img in enumerate(img_list):
         img.save(''.join([slice_path, str(count), '_', (file_name.split('/')[-1])]))
 
+
+
+
 def class_pred(pred, threshold):
     if max(pred) > threshold :
         return pred.argmax()
     return -1
 
 
-
-
-
-
 # ------------------------------------- #
-# ----------------MAIN----------------- #
+# ----------------App------------------ #
 # ------------------------------------- #
 
 
@@ -124,7 +139,7 @@ pred_visual = False
 img_path = None
 disable_button = True
 img_annot = None
-model = tf.keras.models.load_model('tf_TransferLearning_8class_VGG16.hfpy')
+model = st.cache(tf.keras.models.load_model('tf_TransferLearning_8class_VGG16.hfpy'))
 class_names = {'bright dune': 0,
  'crater': 1,
  'dark dune': 2,

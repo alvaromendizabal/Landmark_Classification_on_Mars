@@ -222,7 +222,7 @@ if st.button('Predict', disabled=disable_button):
     )
     predict_generator.reset()
 
-    preds = st.cached(model.predict(predict_generator))
+    preds = st.cache(model.predict(predict_generator))
 
     dfbbox['pred_class'] = [class_pred(pred, thresh) for pred in preds]
 

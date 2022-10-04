@@ -139,7 +139,7 @@ pred_visual = False
 img_path = None
 disable_button = True
 img_annot = None
-model = st.cache(tf.keras.models.load_model('tf_TransferLearning_8class_VGG16.hfpy'))
+model = tf.keras.models.load_model('tf_TransferLearning_8class_VGG16.hfpy')
 class_names = {'bright dune': 0,
  'crater': 1,
  'dark dune': 2,
@@ -222,7 +222,7 @@ if st.button('Predict', disabled=disable_button):
     )
     predict_generator.reset()
 
-    preds = model.predict(predict_generator)
+    preds = st.cached(model.predict(predict_generator))
 
     dfbbox['pred_class'] = [class_pred(pred, thresh) for pred in preds]
 

@@ -7,7 +7,6 @@ from PIL import Image, ImageDraw
 import pandas as pd
 import os
 import shutil
-
 import numpy as np
 np.random.seed(42)
 
@@ -42,6 +41,12 @@ def draw_bounding_rectangle(coords, img_object, color='#ff0000', width=5, alpha=
 
     
 def new_bboxes(img_object):
+    '''
+    Creates dataframe with the bounding box coordinates and window size
+    for bounding boxes according to image and window sizes.
+
+    Saves dataframe as a CSV file in the map folder.
+    '''
     img_width,  img_height = img_object.size
     overlap = 0.4
 
@@ -75,20 +80,32 @@ def new_bboxes(img_object):
                        'winsize']
     df_bbox.to_csv(f'./map/bbox_{img_width}_{img_height}.csv', 
                    index=False)
-    
+
     return df_bbox
 
 
 
 
 def coords_bbox(x_cnt, y_cnt, winsize):
+    '''
+    x_cnt: window center x coordinate
+    y_cnt: window center y coordinate
+    winsize: window size of bounding box
+
+    Returns tuple (x-min, y-min, x-max, y-max) of bounding box
+    '''
     return int(x_cnt - winsize / 2), int(y_cnt - winsize / 2), int(x_cnt + winsize / 2), int(y_cnt + winsize / 2)
 
-
-
-
 def new_bbox(img_object, create_new=False):
-    
+    '''
+    Checks if bounding boxes csv exists for the size of the img_object. 
+    If bounding boxes csv exists, then that csv is read. 
+    If bounding boxes csv doesn't exist, then a new file with the 
+    correct img_width and img_height (size) is created.
+
+    create_new: bypasses the check above and creates or overwrites the 
+    bounding boxes csv file
+    '''
     img_width,  img_height = img_object.size
     
     if create_new:
@@ -108,7 +125,10 @@ def new_bbox(img_object, create_new=False):
 
 
 def img_slice(img_list):
-
+    '''
+    Saves list of images to the map/_slices_img folder
+    img_list: images list that we'll save
+    '''
     file_name = img_file.name
     slice_path = f"./map/_slices_img/"
     st.write(slice_path)
@@ -124,14 +144,21 @@ def img_slice(img_list):
 
 
 def class_pred(pred, threshold):
-    if max(pred) > threshold :
+    '''
+    pred: predicted probability of the classes
+    threshold: predicted probability threshold 
+    that must be met for a valid prediction
+
+    Returns the predicted class 
+    '''
+    if max(pred) > threshold:
         return pred.argmax()
     return -1
 
 
-# ------------------------------------- #
-# ----------------App------------------ #
-# ------------------------------------- #
+# ---------------------------------------------------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------App----------------------------------------------------------------- #
+# ---------------------------------------------------------------------------------------------------------------------------------------- #
 
 
 color_map = {}
@@ -178,10 +205,10 @@ with col1:
         img = Image.open(img_file)
         st.image(img, caption='Red Planet')
         disable_button = False
-        img_width,  img_height = img.size
+        img_width, img_height = img.size
         dfbbox = new_bbox(img, create_new=True)
         img_classify = [img.crop(dfbbox.iloc[row]['bbox_bounds']) 
-                            for row in range(0,dfbbox.shape[0])]
+                            for row in range(0, dfbbox.shape[0])]
 
 
 # Controls. Disabled until image is loaded
@@ -232,8 +259,7 @@ if st.button('Predict', disabled=disable_button):
     for idx in range(0, df_valid.shape[0]):        
         draw_bounding_rectangle(df_valid.iloc[idx]['bbox_bounds'],
                             mask_img,
-                            color=color_map[df_valid.iloc[idx]['pred_class']]
-                            )
+                            color=color_map[df_valid.iloc[idx]['pred_class']])
 
     img_annot = img.convert('RGB')
 

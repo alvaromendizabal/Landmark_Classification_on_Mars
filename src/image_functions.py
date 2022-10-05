@@ -40,11 +40,10 @@ def draw_bounding_rectangle(coords, img, color='#ff0000', width=5, alpha=1.0):
     
 def new_bbox(img_object):
     '''
-    Returns a dataframe that contains the bounding box coordinates and window size
-    for all potential bounding boxes as defined by the size of the image and 
-    a hard-coded set of window sizes
+    Creates dataframe with the bounding box coordinates and window size
+    for bounding boxes according to image and window sizes.
 
-    Dataframe is also saved as a CSV file is saved in the same directory as the large maps
+    Saves dataframe as a CSV file in the map folder.
     '''
     img_width,  img_height = img_object.size
     overlap = 0.4
@@ -62,14 +61,15 @@ def new_bbox(img_object):
 
         # When winsize is odd, we increase by 1 pixel
         if (winsize % 2) != 0:
-            winsize+=1
+            winsize += 1
+
         x_values = np.arange((winsize / 2), (img_width - winsize / 2), stride)
         y_values = np.arange((winsize / 2), (img_height - winsize / 2), stride)
-        centroids = [(x, y) for x in x_values for y in y_values]
 
+        centroids = [(x, y) for x in x_values for y in y_values]
         coords_list = [coords_bbox(x_ct, y_ct, winsize) for x_ct,y_ct in centroids]
 
-        # Appends new records for current winsize and bbox
+        # Append winsize and bbox records
         df_list.append(pd.DataFrame([coords_list, [winsize] * len(coords_list)]).T)
 
     bboxes = pd.concat(df_list, ignore_index=True, axis=0)
@@ -79,44 +79,46 @@ def new_bbox(img_object):
 
 def coords_bbox(x_cnt, y_cnt, winsize):
     '''
-    x_cnt : x coordinate of center of window
-    y_cnt : y coordinate of center of window
-    winsize: Size of window (bounding box)
+    x_cnt: window center x coordinate
+    y_cnt: window center y coordinate
+    winsize: window size of bounding box
 
-    Returns a tuple of (x-min, y-min, x-max, y-max) of the bounding box
+    Returns tuple (x-min, y-min, x-max, y-max) of bounding box
     '''
     return int(x_cnt - winsize / 2), int(y_cnt - winsize / 2), int(x_cnt + winsize / 2), int(y_cnt + winsize / 2)
 
 
-def new_bbox(img_object, create_new = False):
+def new_bbox(img_object, create_new=False):
     '''
-    Checks to see if a file containing bounding boxes already exists for the size of the image passed
-    as an argument. 
-    If already exists, the csv is loaded, if not a fresh file is created.
+    Checks if bounding boxes csv exists for the size of the img_object. 
+    If bounding boxes csv exists, then that csv is read. 
+    If bounding boxes csv doesn't exist, then a new file with the 
+    correct img_width and img_height (size) is created.
 
-    create_new =    ignores check of file and creates (and overwrites) csv file of potential 
-                        bounding boxes
+    create_new: bypasses the check above and creates or overwrites 
+    the bounding boxes csv file
     '''
-    img_width,  img_height = img_object.size
+    img_width, img_height = img_object.size
     
     if create_new:
         print('creating new')
-        bboxes = new_bbox(img_object)
+        df_bbox = new_bbox(img_object)
     else:
         try:
             print('reading')
-            bboxes = pd.read_csv(f'map/bbox_{img_width}_{img_height}.csv',
-            converters={"bbox_bounds": eval})
+            df_bbox = pd.read_csv(f'map/bbox_{img_width}_{img_height}.csv',
+            converters = {'bbox_bounds': eval})
         except FileNotFoundError:
             print('no document - creating')
-            df_bboxPotentials = new_bbox(img_object)
+            df_bbox = new_bbox(img_object)
                 
-    return bboxes
+    return df_bbox
 
 def class_pred(pred, threshold):
     '''
-    pred : predicted probability of all classes
-    threshold : predicted probability threshold that needs to be met to be considered a valid prediction
+    pred: predicted probability of the classes
+    threshold: predicted probability threshold 
+    that must be met for a valid prediction
 
     Returns the predicted class 
     '''
@@ -126,10 +128,9 @@ def class_pred(pred, threshold):
 
 def img_slice_save(img_list, file):
     '''
-    Saves list of images to a specific folder
-    Recreates folder on each run.
-    listOfImages : list of images to save
-    fName : used in the naming convention of the slices
+    Saves list of images to the map/_slices_img folder
+    img_list: images list that we'll save
+    file: file name
     '''
     slice_path = f"./map/_slices_img/"
     

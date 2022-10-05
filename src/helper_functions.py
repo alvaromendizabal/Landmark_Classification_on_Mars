@@ -4,17 +4,18 @@ import seaborn as sns
 
 def create_directory(path):
     '''
-    Tries to create a directory (relative to root)    
+    Creates a directory    
     '''
     try:
         os.mkdir(path)
     except FileExistsError:
-        print(path, 'directory already exists')
+        print(path, 'directory exists')
         
         
 def display_model_train_test_graphs(results):
     '''
-    Displays train vs validation graphs for accuracy and loss
+    Displays graphs for accuracy and loss 
+    for comparison between train and validation
     '''
     train_loss = results.history['loss']
     train_acc = results.history['accuracy']    

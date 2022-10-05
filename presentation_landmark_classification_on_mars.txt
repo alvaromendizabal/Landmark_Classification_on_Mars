@@ -1,0 +1,131 @@
+Hi my name is Alvaro Mendizabal and I'm a Data Scientist with the Image Science and Analysis Group. 
+I'm happy to be here today in front of you fine people at NASA to share our work on Landmark Identification on Mars
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+We gathered about 65K images taken by a camera called HiRISE. 
+It's aboard the Mars Reconnaissance Orbirter and it's superpowerful
+The images are seperated into 8 different classes or types. Here are some stunning versions of them. 
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+Dark dune and bright dune are 2 sand dune classes on Mars. 
+Dark dunes are completely defrosted, 
+and bright dunes are typically bright due to overlying frost. 
+Black spots can be seen where parts of the dune are defrosting.
+
+We can also included craters. They're rather easy to spot. 
+
+Another class is slope streaks. They're these dark flow-like features on slopes. 
+Scientists believe these features were formed by a dry process in which overlying (bright) 
+dust tumbles down a slope and expose a darker sub-surface.
+
+Our 5th class is impact ejecta. It's actually material that's blasted out from a volcano eruption or meteorite impact. 
+They also include cases in which the impact cleared away overlying dust, revealing the underlying surface. 
+In some cases, the crater isn't visible because it's too small to see. 
+Impact ejecta may also include lava that poured out from the impact (blobby ("lobate") rather than blast-like), 
+more like an eruption (triggered by the impact). 
+Impact ejecta can be isolated, or they can form in batches when the impactor breaks up into numerous pieces.
+
+The next 2 classes are spiders and swiss cheese. They're phenomena that occur in the south polar region of Mars. 
+Spiders have a central pit with radial troughs, and could be formed due to sublimation of carbon dioxide ice. 
+This process can create mineral deposits on top, which resemble light or dark dust that highlights cracks 
+in the CO2 ice. 
+
+Swiss cheese is a landmark type that includes pits that are formed when the sun heats the ice 
+causing sublimation (change from solid to gas).
+
+Other is a catch-all class that contains images that don't fit into any of the classes.
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+Two weeks ago, NASA smashed it's Dart probe into an asteroid, destroying itself in the process. 
+This is a feed from the probe right before impact 
+The collision was intentional and designed to test whether space rocks that might threaten 
+Earth could be pushed safely out of the way. 
+Reports indicate that the Dart probe was a mere 17 meters off the exact centre of the asteroid. 
+
+Reaching these cosmic milestones remind us that NASA is capable of traveling further than they ever have, 
+navigating to specific locations, and capturing photos, recording video and taking samples.
+
+But, "Houston, we have a problem." And it's that there aren't enough scientists to review all the 
+collected images and classify them. We at Image Science and Analysis Group (ISAG) have built a model that 
+"takes one giant leap" over this problem.
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+Our model has performed very well on unseen data. 
+We can predict 8 different landmark types on Mars with 91.4% accuracy. This work could directly contribute 
+to mapping out the terain on Mars. Sort of like a Mars google maps. 
+Additionally, we can also identify other unclassifiable landmarks or features. 
+The images classified as other may foster efforts to select sites of interest to explore 
+during manned or unnmanned missions. 
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+Most importantly we made the model accessible! We made an app. 
+You drop in a image and the app will identify the different landmarks in the image. 
+When the app identifies a landmark it draws a colored box around the landmark. 
+We can tell which landmark it is because each landmark has been assigned a unique color. 
+As you can see we have dark dunes, slope streaks, and swiss cheese mapped out in this image
+The app promises to be an efficient and effective classifying tool.
+
+This app can be used by everyday people who are curious about Mars too. 
+It's educational, interactive and interesting.
+Imagine classrooms across the country first learning about NASA and space using our Mars Google Maps.
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+At it's core, our model let's us know 
+what we're looking at and if doesn't then it lures to a new place we could go. 
+In this way, image science is part and parcel of space exploration and discovery and 
+our group can help NASA further this mission.
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+Again my name is Alvaro Mendizabal, I'm a Data Scientist with Image Sciene and Analysis Group. 
+Thank you for your time.
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+Before I go, I'd like to give a special thanks to 
+Alec, Ashli, Ben, Charles, Charlie, Garrett, Jordan, Kelly, and Kevin.
+Y'all helped me learn throughout the bootcamp. I'm really proud of y'all too. We still have lots to do. Let's get these jobs!
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE, NEXT SLIDE
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
